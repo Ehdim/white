@@ -27,12 +27,13 @@ right.addEventListener("click",function(){
 	}
 	 back.style.backgroundImage=images[count];
    text1.innerHTML=texts[count];
-   text1.style.fontSize='60px';
+   text1.style.fontSize='70px';
    text1.style.fontWeight='100';
    text1.style.width='900px';
    text1.style.color='white';
    text2.innerHTML=tex[count];
    text2.style.color='white';
+
 });
 left.addEventListener("click",function(){
    count--;
@@ -42,10 +43,20 @@ left.addEventListener("click",function(){
 	 back.style.backgroundImage=images[count];
    text1.innerHTML=texts[count];
    text2.innerHTML=tex[count];
-   text1.style.fontSize='60px';
+   text1.style.fontSize='70px';
    text1.style.fontWeight='100';
    text1.style.width='900px';
    text1.style.color='white';
    text2.style.color='white';
 });
 
+ document.getElementById('image').addEventListener('click', function(event) {
+    var index = event.target.getAttribute('index') - 1;
+    for (var i = 0; i < image.childElementCount; i++) {
+       this.children[i].classList.remove('active');
+       back.style.backgroundImage=images[index];
+       text1.innerHTML=texts[index];
+       text1.style.fontSize='70px';
+       }
+   this.children[index].classList.add('active');
+  });

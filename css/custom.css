@@ -81,6 +81,23 @@ font-family: 'Roboto', sans-serif;
     background-image: url("../img/slide1.jpg");
     background-size: cover;
 }
+ #corusel .active {
+    border: 5px solid white;
+    position: relative;
+    box-sizing: border-box;
+}
+  #corusel .active::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: -19%;
+    left: 40%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    box-sizing: border-box;
+}
 #text1{
     margin-top: 100px;
 }
@@ -128,7 +145,7 @@ font-family: 'Roboto', sans-serif;
     color: white;
     transition: 0.5s;
 }
-#img{
+#image{
     display: flex;
     margin-left: 210px;
 }
@@ -290,23 +307,35 @@ font-family: 'Roboto', sans-serif;
 #phone img{
     margin-top: -115px;
 }
-#phone span{
-     position: relative;
-    display: inline-block;
-    transition: all 0.3s ease-in-out;
+#phone .hoverable {
+      cursor:pointer;
+      color:white;
+      text-decoration:none;
+    }
+  #phone  .hoverable .hover {
+      display:none;
+    }
+  #phone  .hoverable:hover .normal {
+      display:none;
+    }
+ #phone   .hoverable:hover .hover {
+      display:inline; 
+    }
+    /*responsive*/
+@media only screen and (max-width: 700px) {
+    /* For mobile phones: */
+   .col3{
+     width:16.6666%;
+     margin-left: -50px;
+   }
+   .menu{
+       margin-right: -60px;
+       width: 66.6664%;
+       margin-right: -50px;
+   }
+   .menu ul {
+    margin-top: 10px;
+    margin-left: 10px;
 }
-#phone span:before{
-    content: attr(data-hover);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 900;
-    line-height: 20px;
-    font-size: 13px;
-    color: #1C1C1C;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
+
 }
